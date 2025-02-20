@@ -1,36 +1,56 @@
-# Recipe-Guide-App
+# 🍽 Recipe Guide App (Tarif Rehberi Uygulaması)
+
 Bu proje, kullanıcının yemek tariflerini saklayabileceği ve **eldeki mevcut malzemelerle hangi yemeklerin yapılabileceğini gösteren** bir masaüstü uygulamasıdır.
 
-## 🎯 Amaç
-
-- **Dinamik arama ve filtreleme** özellikleri ile tarifleri hızlıca bulma
-- **Veritabanı yönetimi ve algoritma geliştirme** becerilerini geliştirme
-- **Kullanıcı dostu bir arayüz** ile yemek tariflerini düzenleme ve saklama
-- **Eksik malzemeleri tespit edip maliyet hesaplama**
 ---
-- ## 🚀 Özellikler
 
-✅ **Tarif Ekleme, Güncelleme ve Silme**  
-✅ **Malzemeye Göre Tarif Önerisi**  
-✅ **Dinamik Arama & Filtreleme**  
-✅ **Hazırlama Süresine ve Maliyete Göre Sıralama**  
-✅ **Eksik Malzeme Maliyeti Hesaplama**  
-✅ **Veritabanı ile Tarif ve Malzemeleri Saklama (MSSQL)** 
+## 📌 Özellikler
+
+- 📝 **Tarif Ekleme:** Kullanıcı, tarifin adını, kategorisini, hazırlama süresini ve talimatlarını ekleyebilir. Tarif için malzemeler seçilebilir veya yeni malzeme eklenebilir.
+- 🔍 **Tarif Arama:** Kullanıcı tarif adına veya malzemeye göre arama yapabilir.
+- ✅ **Tarif Önerisi:** Eksik veya yetersiz malzemeli tarifler kırmızı, yapılabilir tarifler yeşil renkte gösterilir. Eksik malzemelerin maliyeti hesaplanır.
+- 📊 **Filtreleme & Sıralama:** Kullanıcı tarifleri **hazırlama süresi, maliyet, malzeme sayısı ve kategoriye** göre filtreleyebilir ve sıralayabilir.
+- 🖊 **Tarif Güncelleme & Silme:** Kullanıcı tarifleri düzenleyebilir veya silebilir. Değişiklikler anında veritabanına yansır.
+- 🛑 **Duplicate Kontrolü:** Aynı tarifin tekrar eklenmesi engellenir.
 
 ---
-- ## 📌 Fonksiyonlar
-📝 **Tarif Ekleme**
-Kullanıcı, tarifin adını, kategorisini, hazırlama süresini ve talimatlarını ekler.
-Tarif için malzemeler seçilir veya yeni malzeme eklenir.
-Tarif veritabanına kaydedilir.
-🔍 **Dinamik Arama & Filtreleme**
-Kullanıcı, tarif adına veya malzemeye göre arama yapabilir.
-Hazırlama süresine ve maliyete göre sıralama yapılabilir.
-Kullanıcı kategoriye veya malzeme sayısına göre filtreleme yapabilir.
-✅ **Tarif Önerisi**
-Eksik veya yetersiz malzemesi olan tarifler kırmızı renkte gösterilir.
-Tam yapılabilecek tarifler yeşil renkte gösterilir.
-Eksik malzemelerin maliyeti hesaplanarak kullanıcıya gösterilir.
-✏ **Tarif Güncelleme & Silme**
-Kullanıcı, daha önce eklenen tarifleri düzenleyebilir veya silebilir.
-Güncellenen/silinen tarif veritabanında anında değiştirilir.
+
+## 🖥️ Kullanıcı Arayüzü (GUI)
+
+- 📌 **Ana Sayfa:** Tüm tariflerin listelendiği bir alan
+- 📋 **Menü:** Tarif ekleme, güncelleme ve silme işlemleri
+- 🔍 **Arama & Filtreleme Alanı:** Tarif arama ve filtreleme seçenekleri
+- ✅ **Sonuç Ekranı:** Kullanıcının mevcut malzemelerine uygun yemekleri listeler
+
+---
+
+## 🏗️ Kullanılan Teknolojiler
+
+| Teknoloji | Açıklama |
+|-----------|---------|
+| **C# (WinForms)** | Kullanıcı arayüzü |
+| **MSSQL** | Veritabanı yönetimi |
+| **Entity Framework** | ORM Kullanımı |
+| **Git/GitHub** | Versiyon kontrolü |
+
+---
+
+## 📂 Veritabanı Yapısı
+
+**1️⃣ Tarifler Tablosu**
+- Tarif bilgilerini (isim, kategori, süre, talimatlar) içerir.
+
+**2️⃣ Malzemeler Tablosu**
+- Malzemelerin adını, miktarını ve birim fiyatını saklar.
+
+**3️⃣ Tarif-Malzeme İlişkisi (Many-to-Many)**
+- Tariflerde kullanılan malzemeleri ve miktarlarını ilişkilendirir.
+
+---
+
+## 📌 Kurulum & Kullanım
+
+1. **Projeyi klonla**
+   ```sh
+   git clone https://github.com/senolkms/Recipe-Guide-App.git
+   cd Recipe-Guide-App
